@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { MensajesPage } from '../pages/mensajes/mensajes';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -19,7 +20,8 @@ import { IonicStorageModule } from '@ionic/storage';
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    MensajesPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { IonicStorageModule } from '@ionic/storage';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    MensajesPage
   ],
   providers: [
     StatusBar,
