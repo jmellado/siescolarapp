@@ -11,6 +11,7 @@ import { MensajesPage } from '../pages/mensajes/mensajes';
 
 //Servicios
 import { LoginService } from '../services/login.service';
+import { MensajesService } from '../services/mensajes.service';
 
 //Modulos
 import { HttpModule } from '@angular/http';
@@ -40,7 +41,8 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginService
+    LoginService,
+    MensajesService
   ]
 })
 export class AppModule {}

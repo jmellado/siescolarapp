@@ -18,4 +18,10 @@
 
 <ion-content padding>
 
+	<ion-list>
+	  <button ion-item *ngFor="let mensaje of listamensajes">
+	    {{ mensaje.titulo }}
+	  </button>  
+	</ion-list>
+
 </ion-content>
