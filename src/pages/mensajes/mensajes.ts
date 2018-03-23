@@ -4,6 +4,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //Servicios
 import {MensajesService} from '../../services/mensajes.service';
 
+//Modulos
+import { Storage } from '@ionic/storage';
+
 /**
  * Generated class for the MensajesPage page.
  *
@@ -19,8 +22,10 @@ import {MensajesService} from '../../services/mensajes.service';
 export class MensajesPage {
 
 	listamensajes : any;
+	session: any;
+	id_persona: string;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams, private mensajesservice: MensajesService) {
+	constructor(public navCtrl: NavController, public navParams: NavParams, private mensajesservice: MensajesService, private storage:Storage) {
 
 		this.mostrar_mensajes();
 	}
@@ -32,12 +37,28 @@ export class MensajesPage {
 
 	mostrar_mensajes(){
 
-	  	this.mensajesservice.getMensajes()
-	  		.subscribe(
-	  			rs => this.listamensajes = rs,
-	  			er => console.log(er),
-	  			() => console.log(this.listamensajes)
-	  		)
+		this.storage.get('session').then((val) =>{
+
+	        if(val !=null && val !=undefined){
+
+		        this.session = JSON.parse(val);
+		        this.id_persona = this.session.id_persona;
+
+		        let persona = {id_persona:this.id_persona};
+
+		        this.mensajesservice.getMensajes(persona)
+			  		.subscribe(
+			  			rs => this.listamensajes = rs,
+			  			er => console.log(er),
+			  			() => console.log(this.listamensajes)
+			  		)
+		        
+		        
+		    }
+	        
+	    });
+
+	  	
 	}
 
 }

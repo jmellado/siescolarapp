@@ -26,10 +26,11 @@ export class MensajesService {
 	}
 
 
-	getMensajes(): Observable<any> {
-
+	getMensajes(persona): Observable<any> {
+		
 		let url = `${this.url}`;
-		return this.http.post(url+'index', this.options)
+		let iJson = JSON.stringify(persona);
+		return this.http.post(url+'index',iJson, this.options)
 				   .map(r => r.json()) 
 		
 	}
