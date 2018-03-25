@@ -1,0 +1,38 @@
+<!--
+  Generated template for the DetallemensajePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detallemensaje</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<ion-card>
+		<ion-card-content>
+
+			<ion-card-title>
+	      		{{mensaje?.titulo}}
+	        </ion-card-title>
+
+	        <ion-item>
+				<ion-avatar item-start>
+			      <img src="../../assets/imgs/logo.png">
+			    </ion-avatar>
+			    
+			    <h2>{{mensaje?.nombres}} {{mensaje?.apellido1}}</h2>
+			    <p>Para mí</p>
+			    <p>{{mensaje?.fecha_envio}}</p>
+			</ion-item>
+
+			<p>{{mensaje?.contenido}}</p>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

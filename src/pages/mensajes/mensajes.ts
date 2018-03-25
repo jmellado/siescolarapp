@@ -7,6 +7,9 @@ import {MensajesService} from '../../services/mensajes.service';
 //Modulos
 import { Storage } from '@ionic/storage';
 
+//Paginas
+import { DetallemensajePage } from '../../pages/detallemensaje/detallemensaje';
+
 /**
  * Generated class for the MensajesPage page.
  *
@@ -59,6 +62,13 @@ export class MensajesPage {
 	    });
 
 	  	
+	}
+
+
+	detalle_mensaje(mensaje){
+
+		this.navCtrl.push(DetallemensajePage, {id_notificacion:mensaje.id_notificacion});
+
 	}
 
 }

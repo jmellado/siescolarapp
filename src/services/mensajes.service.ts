@@ -36,5 +36,15 @@ export class MensajesService {
 	}
 
 
+	getMensaje(idNotificacion): Observable<any> {
+		
+		let url = `${this.url}`;
+		let iJson = JSON.stringify(idNotificacion);
+		return this.http.post(url+'detalle_mensaje',iJson, this.options)
+				   .map(r => r.json()) 
+		
+	}
+
+
 
 }

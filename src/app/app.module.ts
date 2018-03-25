@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { MensajesPage } from '../pages/mensajes/mensajes';
+import { DetallemensajePage } from '../pages/detallemensaje/detallemensaje';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -22,7 +23,8 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     HomePage,
     LoginPage,
-    MensajesPage
+    MensajesPage,
+    DetallemensajePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     HomePage,
     LoginPage,
-    MensajesPage
+    MensajesPage,
+    DetallemensajePage
   ],
   providers: [
     StatusBar,

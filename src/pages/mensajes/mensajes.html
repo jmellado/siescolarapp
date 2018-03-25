@@ -25,7 +25,7 @@
       </ion-avatar>
       <h2>{{ mensaje.nombres }} {{ mensaje.apellido1 }}</h2>
       <p>{{ mensaje.titulo }}</p>
-      <button ion-button clear item-end>View</button>
+      <button ion-button clear item-end (click)="detalle_mensaje(mensaje)">View</button>
     </ion-item>
   </ion-list>
 
