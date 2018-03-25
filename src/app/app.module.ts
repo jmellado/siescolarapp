@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { MensajesPage } from '../pages/mensajes/mensajes';
 import { DetallemensajePage } from '../pages/detallemensaje/detallemensaje';
 import { TareasPage } from '../pages/tareas/tareas';
+import { DetalletareaPage } from '../pages/detalletarea/detalletarea';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -27,7 +28,8 @@ import { IonicStorageModule } from '@ionic/storage';
     LoginPage,
     MensajesPage,
     DetallemensajePage,
-    TareasPage
+    TareasPage,
+    DetalletareaPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { IonicStorageModule } from '@ionic/storage';
     LoginPage,
     MensajesPage,
     DetallemensajePage,
-    TareasPage
+    TareasPage,
+    DetalletareaPage
   ],
   providers: [
     StatusBar,

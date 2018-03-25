@@ -25,7 +25,7 @@
 			</ion-avatar>
 			<h2>{{ tarea.nombres }} {{ tarea.apellido1 }}</h2>
 			<p>{{ tarea.titulo }}</p>
-			<button ion-button clear item-end>View</button>
+			<button ion-button clear item-end (click)="detalle_tarea(tarea)">View</button>
 	    </ion-item>
 	</ion-list>
 

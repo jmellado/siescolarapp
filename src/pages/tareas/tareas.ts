@@ -7,6 +7,9 @@ import {TareasService} from '../../services/tareas.service';
 //Modulos
 import { Storage } from '@ionic/storage';
 
+//Paginas
+import { DetalletareaPage } from '../../pages/detalletarea/detalletarea';
+
 /**
  * Generated class for the TareasPage page.
  *
@@ -59,6 +62,13 @@ export class TareasPage {
 	    });
 
 	  	
+	}
+
+
+	detalle_tarea(tarea){
+
+		this.navCtrl.push(DetalletareaPage, {id_notificacion:tarea.id_notificacion});
+
 	}
 
 }
