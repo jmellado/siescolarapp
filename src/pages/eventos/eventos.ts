@@ -7,6 +7,9 @@ import {EventosService} from '../../services/eventos.service';
 //Modulos
 import { Storage } from '@ionic/storage';
 
+//Paginas
+import { DetalleeventoPage } from '../../pages/detalleevento/detalleevento';
+
 /**
  * Generated class for the EventosPage page.
  *
@@ -59,6 +62,13 @@ export class EventosPage {
 	    });
 
 	  	
+	}
+
+
+	detalle_evento(evento){
+
+		this.navCtrl.push(DetalleeventoPage, {id_notificacion:evento.id_notificacion});
+
 	}
 
 }

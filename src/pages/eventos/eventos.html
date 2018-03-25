@@ -25,7 +25,7 @@
 			</ion-avatar>
 	      	<h2>{{ evento.nombres }} {{ evento.apellido1 }}</h2>
 	      	<p>{{ evento.titulo }}</p>
-	      	<button ion-button clear item-end>View</button>
+	      	<button ion-button clear item-end (click)="detalle_evento(evento)">View</button>
 	    </ion-item>
 	</ion-list>
 

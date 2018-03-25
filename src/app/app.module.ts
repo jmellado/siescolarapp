@@ -12,6 +12,7 @@ import { DetallemensajePage } from '../pages/detallemensaje/detallemensaje';
 import { TareasPage } from '../pages/tareas/tareas';
 import { DetalletareaPage } from '../pages/detalletarea/detalletarea';
 import { EventosPage } from '../pages/eventos/eventos';
+import { DetalleeventoPage } from '../pages/detalleevento/detalleevento';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -32,7 +33,8 @@ import { IonicStorageModule } from '@ionic/storage';
     DetallemensajePage,
     TareasPage,
     DetalletareaPage,
-    EventosPage
+    EventosPage,
+    DetalleeventoPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { IonicStorageModule } from '@ionic/storage';
     DetallemensajePage,
     TareasPage,
     DetalletareaPage,
-    EventosPage
+    EventosPage,
+    DetalleeventoPage
   ],
   providers: [
     StatusBar,
