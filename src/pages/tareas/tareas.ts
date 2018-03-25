@@ -1,0 +1,64 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+//Servicios
+import {TareasService} from '../../services/tareas.service';
+
+//Modulos
+import { Storage } from '@ionic/storage';
+
+/**
+ * Generated class for the TareasPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-tareas',
+  templateUrl: 'tareas.html',
+})
+export class TareasPage {
+
+	listatareas : any;
+	session: any;
+	id_persona: string;
+
+	constructor(public navCtrl: NavController, public navParams: NavParams, private tareasservice: TareasService, private storage:Storage) {
+
+		this.mostrar_tareas();
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad TareasPage');
+	}
+
+
+	mostrar_tareas(){
+
+		this.storage.get('session').then((val) =>{
+
+	        if(val !=null && val !=undefined){
+
+		        this.session = JSON.parse(val);
+		        this.id_persona = this.session.id_persona;
+
+		        let persona = {id_persona:this.id_persona};
+
+		        this.tareasservice.getTareas(persona)
+			  		.subscribe(
+			  			rs => this.listatareas = rs,
+			  			er => console.log(er),
+			  			() => console.log(this.listatareas)
+			  		)
+		        
+		        
+		    }
+	        
+	    });
+
+	  	
+	}
+
+}

@@ -9,10 +9,12 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { MensajesPage } from '../pages/mensajes/mensajes';
 import { DetallemensajePage } from '../pages/detallemensaje/detallemensaje';
+import { TareasPage } from '../pages/tareas/tareas';
 
 //Servicios
 import { LoginService } from '../services/login.service';
 import { MensajesService } from '../services/mensajes.service';
+import { TareasService } from '../services/tareas.service';
 
 //Modulos
 import { HttpModule } from '@angular/http';
@@ -24,7 +26,8 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     LoginPage,
     MensajesPage,
-    DetallemensajePage
+    DetallemensajePage,
+    TareasPage
   ],
   imports: [
     BrowserModule,
@@ -38,14 +41,16 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     LoginPage,
     MensajesPage,
-    DetallemensajePage
+    DetallemensajePage,
+    TareasPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginService,
-    MensajesService
+    MensajesService,
+    TareasService
   ]
 })
 export class AppModule {}
