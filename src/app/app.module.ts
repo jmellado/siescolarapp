@@ -23,7 +23,6 @@ import { EventosService } from '../services/eventos.service';
 //Modulos
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
-import { Push } from '@ionic-native/push';
 
 @NgModule({
   declarations: [
@@ -58,7 +57,6 @@ import { Push } from '@ionic-native/push';
   providers: [
     StatusBar,
     SplashScreen,
-    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginService,
     MensajesService,
