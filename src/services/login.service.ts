@@ -16,8 +16,8 @@ export class LoginService {
 
 	private options;
 
-	//private url = 'http://192.168.0.9:80/siescolarappservicios/index.php/Login_controller/';
-	private url = 'http://localhost:80/siescolarappservicios/index.php/Login_controller/';
+	private url = 'http://192.168.0.13:80/siescolarappservicios/index.php/Login_controller/';
+	//private url = 'http://localhost:80/siescolarappservicios/index.php/Login_controller/';
 
 	//userName: string;
 	loggedIn: boolean;
@@ -66,6 +66,16 @@ export class LoginService {
 
 	isLoggedIn(){
 		return this.loggedIn;
+	}
+
+
+	registrarToken(PersonaToken): Observable<any> {
+		
+		let url = `${this.url}`;
+		let iJson = JSON.stringify(PersonaToken);
+		return this.http.post(url+'registrar_token',iJson, this.options)
+				   .map(r => r.text()) 
+		
 	}
 
 

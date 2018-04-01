@@ -9,6 +9,7 @@ import { LoginPage } from '../../pages/login/login';
 
 //Modulos
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -16,7 +17,11 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 })
 export class HomePage {
 
-	constructor(public navCtrl: NavController,private push: Push, private loginservice: LoginService) {
+	session: any;
+	id_persona: string;
+	respuesta:any;
+
+	constructor(public navCtrl: NavController,private push: Push, private loginservice: LoginService, private storage:Storage) {
 
 		// to check if we have permission
 		this.push.hasPermission()
@@ -48,6 +53,7 @@ export class HomePage {
 				pushObject.on('registration').subscribe((registration: any) => {
 					//console.log('Device registered', registration)
 					alert(registration.registrationId.toString());
+					this.registrar_token(registration.registrationId.toString());
 				});
 
 				pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
@@ -65,6 +71,32 @@ export class HomePage {
 
 	  	this.loginservice.logout();
 	  	this.navCtrl.setRoot(LoginPage);
+	}
+
+
+	registrar_token(token){
+
+		this.storage.get('session').then((val) =>{
+			
+	        if(val !=null && val !=undefined){
+
+		        this.session = JSON.parse(val);
+		        this.id_persona = this.session.id_persona;
+
+		        let PersonaToken = {id_persona:this.id_persona, token:token};
+		        //alert(JSON.stringify(PersonaToken));
+		        this.loginservice.registrarToken(PersonaToken)
+			  		.subscribe(
+			  			rs => this.respuesta = rs,
+			  			er => console.log(er)
+			  			//() => alert(this.respuesta)
+			  		)
+		        
+		        
+		    }
+	        
+	    });
+
 	}
 
 }
