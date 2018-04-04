@@ -48,11 +48,14 @@ export class HomePage {
 
 				const pushObject: PushObject = this.push.init(options);
 
-				pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+				pushObject.on('notification').subscribe((notification: any) => {
+					//console.log('Received a notification', notification)
+					alert(notification.message);
+				});
 
 				pushObject.on('registration').subscribe((registration: any) => {
 					//console.log('Device registered', registration)
-					alert(registration.registrationId.toString());
+					//alert(registration.registrationId.toString());
 					this.registrar_token(registration.registrationId.toString());
 				});
 
