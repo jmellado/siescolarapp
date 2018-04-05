@@ -13,45 +13,47 @@
 </ion-header>-->
 
 
-<ion-content padding class="background">
+<ion-content padding class="login_content">
 
 	<ion-grid>
 		<ion-row>
 			<ion-col col-4></ion-col>
 			<ion-col col-4 class="col-logo">
-				<img src="../../assets/imgs/logo.png">
+				<img src="https://picsum.photos/200/300?image=0">
 			</ion-col>
 			<ion-col col-4></ion-col>
 		</ion-row>
 	</ion-grid>
 
-	<ion-list class="list-form">
+	<div padding class="list-form">
+		<ion-list>
 
-		<ion-item>
-			<ion-label floating>
-				<ion-icon name="person" item-start></ion-icon>
-				Usuario
-			</ion-label>
-			<ion-input type="text" [(ngModel)]="username"></ion-input>
-		</ion-item>
+			<ion-item>
+				<ion-label floating>
+					<ion-icon name="person" item-start></ion-icon>
+					Usuario
+				</ion-label>
+				<ion-input type="text" [(ngModel)]="username"></ion-input>
+			</ion-item>
 
-		<ion-item>
-			<ion-label floating>
-				<ion-icon name="lock" item-start></ion-icon>
-				Contraseña
-			</ion-label>
-			<ion-input type="password" [(ngModel)]="password"></ion-input>
-		</ion-item>
+			<ion-item>
+				<ion-label floating>
+					<ion-icon name="lock" item-start></ion-icon>
+					Contraseña
+				</ion-label>
+				<ion-input type="password" [(ngModel)]="password"></ion-input>
+			</ion-item>
 
-	</ion-list>
+		</ion-list>
+	</div>
 
 	<div padding>
 		<button ion-button color="primary" block tappable (click)="login()">
 			<ion-icon name="log-in"></ion-icon>
-			Iniciar Sesión
+			 Iniciar Sesión
 		</button>
 	</div>
 
-	<p text-center ion-text color="secondary" tappable><strong>¿OLVIDASTE TU CONTRASEÑA?</strong></p>
+	<p text-center ion-text color="primary" tappable><strong>¿OLVIDASTE TU CONTRASEÑA?</strong></p>
 
 </ion-content>
