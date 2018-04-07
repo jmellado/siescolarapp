@@ -9,6 +9,9 @@ import { MensajesPage } from '../pages/mensajes/mensajes';
 import { TareasPage } from '../pages/tareas/tareas';
 import { EventosPage } from '../pages/eventos/eventos';
 
+//Servicios
+import {LoginService} from '../services/login.service';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,7 +22,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private loginservice: LoginService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -40,6 +43,12 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  cerrar_sesion(){
+
+    this.loginservice.logout();
+    this.nav.setRoot(LoginPage);
   }
 }
 

@@ -28,7 +28,7 @@
         <ion-icon item-start [name]="p.icon"></ion-icon>
         {{p.title}}
       </button>
-      <button menuClose ion-item>
+      <button menuClose ion-item (click)="cerrar_sesion()">
         <ion-icon item-start name="log-out"></ion-icon>
         Cerrar Sesión
       </button>
