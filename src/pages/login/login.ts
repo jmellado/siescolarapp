@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 //Servicios
 import {LoginService} from '../../services/login.service';
@@ -31,7 +31,7 @@ export class LoginPage {
 	session : any;
 	logueado: boolean;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService, public alertCtrl: AlertController, private storage: Storage) {
+	constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService, public alertCtrl: AlertController, private storage: Storage, private menuCtrl: MenuController) {
 		this.verificarlogin();
 	}
 
@@ -109,6 +109,19 @@ export class LoginPage {
 		    }
 	        
 	    });
+	}
+
+
+	//************ Hooks O Eventos De Pagina *****************
+
+	// Se ejecuta cuando la página está a punto de ingresar y convertirse en la página activa.
+	ionViewWillEnter() {
+		this.menuCtrl.enable(false);	
+	}
+
+	// Se ejecuta cuando la página está por salir y ya no es la página activa.
+	ionViewWillLeave() {
+		this.menuCtrl.enable(true);
 	}
 
 
