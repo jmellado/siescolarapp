@@ -27,6 +27,11 @@
 			<p>{{ tarea.titulo }}</p>
 			<button ion-button clear item-end (click)="detalle_tarea(tarea)">View</button>
 	    </ion-item>
+
+	    <div *ngIf="listatareas?.length == 0" class="listavacia">
+	    	<ion-icon item-start name="clipboard"></ion-icon>
+	    	<h1>No Hay Tareas</h1>
+	    </div>
 	</ion-list>
 
 </ion-content>

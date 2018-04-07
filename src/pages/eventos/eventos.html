@@ -27,6 +27,11 @@
 	      	<p>{{ evento.titulo }}</p>
 	      	<button ion-button clear item-end (click)="detalle_evento(evento)">View</button>
 	    </ion-item>
+
+	    <div *ngIf="listaeventos?.length == 0" class="listavacia">
+	    	<ion-icon item-start name="calendar"></ion-icon>
+	    	<h1>No Hay Eventos</h1>
+	    </div>
 	</ion-list>
 
 </ion-content>
