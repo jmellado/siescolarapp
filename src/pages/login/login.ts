@@ -32,7 +32,7 @@ export class LoginPage {
 	logueado: boolean;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService, public alertCtrl: AlertController, private storage: Storage, private menuCtrl: MenuController) {
-		this.verificarlogin();
+		//this.verificarlogin();
 	}
 
 	ionViewDidLoad() {

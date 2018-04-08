@@ -12,21 +12,27 @@ import { EventosPage } from '../pages/eventos/eventos';
 //Servicios
 import {LoginService} from '../services/login.service';
 
+//Modulos
+import { Storage } from '@ionic/storage';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  //rootPage:any = LoginPage;
+  rootPage:any;
+  session : any;
 
   @ViewChild(Nav) nav: Nav;
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private loginservice: LoginService) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private loginservice: LoginService, private storage: Storage) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
+      this.verificarlogin();
       splashScreen.hide();
     });
 
@@ -50,5 +56,21 @@ export class MyApp {
     this.loginservice.logout();
     this.nav.setRoot(LoginPage);
   }
+
+  verificarlogin() {
+
+    this.storage.get('session').then((val) =>{
+
+      if(val !=null && val !=undefined){
+        this.session = JSON.parse(val);
+        this.rootPage = HomePage;
+      }
+      else{
+        this.rootPage = LoginPage;
+      }
+      
+    });
+  }
+
 }
 
