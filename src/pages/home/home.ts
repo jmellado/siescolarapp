@@ -91,8 +91,8 @@ export class HomePage {
 		        this.loginservice.registrarToken(PersonaToken)
 			  		.subscribe(
 			  			rs => this.respuesta = rs,
-			  			er => console.log(er)
-			  			//() => alert(this.respuesta)
+			  			er => console.log(er),
+			  			() => console.log(this.respuesta)
 			  		)
 		        
 		        

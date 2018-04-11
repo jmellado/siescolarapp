@@ -63,6 +63,7 @@ export class MyApp {
 
       if(val !=null && val !=undefined){
         this.session = JSON.parse(val);
+        console.log(this.session.nombres);
         this.rootPage = HomePage;
       }
       else{
