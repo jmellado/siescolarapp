@@ -28,7 +28,7 @@ export class HomePage {
 		  	.then((res: any) => {
 
 		    if (res.isEnabled) {
-		    	alert('Tiene Permisos');
+		    	//alert('Tiene Permisos');
 
 		    	// to initialize push notifications
 				const options: PushOptions = {
