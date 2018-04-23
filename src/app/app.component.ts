@@ -23,6 +23,10 @@ export class MyApp {
   rootPage:any;
   session : any;
 
+  id_persona: string;
+  token: string;
+  respuesta:any;
+
   @ViewChild(Nav) nav: Nav;
 
   pages: Array<{title: string, component: any, icon: string}>;
@@ -53,6 +57,7 @@ export class MyApp {
 
   cerrar_sesion(){
 
+    this.eliminar_token();
     this.loginservice.logout();
     this.nav.setRoot(LoginPage);
   }
@@ -71,6 +76,31 @@ export class MyApp {
       }
       
     });
+  }
+
+
+  eliminar_token(){
+
+    this.storage.get('session').then((val) =>{
+
+      if(val !=null && val !=undefined){
+
+        this.session = JSON.parse(val);
+        this.id_persona = this.session.id_persona;
+        this.token = "XYZ";
+
+        let PersonaToken = {id_persona:this.id_persona, token:this.token};
+
+        this.loginservice.registrarToken(PersonaToken)
+            .subscribe(
+              rs => this.respuesta = rs,
+              er => console.log(er),
+              () => console.log(this.respuesta)
+            )
+      }
+
+    });
+
   }
 
 }
