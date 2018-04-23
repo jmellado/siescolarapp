@@ -67,6 +67,8 @@ export class HomePage {
 
 		});
 
+		this.cargar_session();  	
+
 	}
 
 
@@ -99,6 +101,20 @@ export class HomePage {
 		    }
 	        
 	    });
+
+	}
+
+
+	cargar_session(){
+
+		this.storage.get('session').then((val) =>{
+
+			if(val !=null && val !=undefined){
+
+				this.session = JSON.parse(val);
+
+			}
+		});
 
 	}
 
