@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { DetalletareaPage } from './detalletarea';
+//import { DetalletareaPage } from './detalletarea';
 
 @NgModule({
   declarations: [
-    DetalletareaPage,
+    //DetalletareaPage,
   ],
   imports: [
-    IonicPageModule.forChild(DetalletareaPage),
+    //IonicPageModule.forChild(DetalletareaPage),
   ],
 })
 export class DetalletareaPageModule {}
