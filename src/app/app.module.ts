@@ -19,6 +19,7 @@ import { LoginService } from '../services/login.service';
 import { MensajesService } from '../services/mensajes.service';
 import { TareasService } from '../services/tareas.service';
 import { EventosService } from '../services/eventos.service';
+import { AcudidosService } from '../services/acudidos.service';
 
 //Modulos
 import { HttpModule } from '@angular/http';
@@ -63,7 +64,8 @@ import { Push } from '@ionic-native/push';
     LoginService,
     MensajesService,
     TareasService,
-    EventosService
+    EventosService,
+    AcudidosService
   ]
 })
 export class AppModule {}

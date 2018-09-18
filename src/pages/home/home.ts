@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 //Servicios
 import {LoginService} from '../../services/login.service';
+import {AcudidosService} from '../../services/acudidos.service';
 
 //Paginas
 import { LoginPage } from '../../pages/login/login';
@@ -20,8 +21,9 @@ export class HomePage {
 	session: any;
 	id_persona: string;
 	respuesta:any;
+	listaacudidos : any;
 
-	constructor(public navCtrl: NavController,private push: Push, private loginservice: LoginService, private storage:Storage) {
+	constructor(public navCtrl: NavController,private push: Push, private loginservice: LoginService, private storage:Storage, private acudidosservice: AcudidosService) {
 
 		// to check if we have permission
 		this.push.hasPermission()
@@ -67,7 +69,8 @@ export class HomePage {
 
 		});
 
-		this.cargar_session();  	
+		this.cargar_session();
+		this.mostrar_acudidos();  	
 
 	}
 
@@ -116,6 +119,33 @@ export class HomePage {
 			}
 		});
 
+	}
+
+
+	mostrar_acudidos(){
+
+		this.storage.get('session').then((val) =>{
+
+	        if(val !=null && val !=undefined){
+
+		        this.session = JSON.parse(val);
+		        this.id_persona = this.session.id_persona;
+
+		        let persona = {id_persona:this.id_persona};
+
+		        this.acudidosservice.getAcudidos(persona)
+			  		.subscribe(
+			  			rs => this.listaacudidos = rs,
+			  			er => console.log(er),
+			  			() => console.log(this.listaacudidos)
+			  		)
+		        
+		        
+		    }
+	        
+	    });
+
+	  	
 	}
 
 }

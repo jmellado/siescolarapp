@@ -29,6 +29,32 @@
       </ion-item>
 
     </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+
+      <ion-card-title>
+        Acudidos
+      </ion-card-title>
+
+      <ion-list>
+        <ion-item ion-item *ngFor="let acudido of listaacudidos">
+          <ion-avatar item-start>
+            <img src="assets/imgs/user.png">
+          </ion-avatar>
+          <h2>{{ acudido.nombres }} {{ acudido.apellido1 }}</h2>
+          <p>Curso: {{ acudido.nombre_grado }} {{ acudido.nombre_grupo }} {{ acudido.jornada }}</p>
+          <p>Aula: {{ acudido.nombre_salon }} </p>
+        </ion-item>
+
+        <div *ngIf="listaacudidos?.length == 0" class="listavacia">
+          <ion-icon item-start name="information-circle"></ion-icon>
+          <h2>No Tiene Acudidos</h2>
+        </div>
+      </ion-list>
+
+    </ion-card-content>
   </ion-card>   
   
   <!--<button ion-button (click)="logout()">Cerrar Sesion</button>-->
