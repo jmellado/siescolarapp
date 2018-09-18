@@ -14,8 +14,9 @@ export class TareasService {
 
 	private options;
 
-	private url = 'http://192.168.0.12:80/siescolarappservicios/index.php/Tareas_controller/';
+	private url = 'http://192.168.0.3:80/siescolarappservicios/index.php/Tareas_controller/';
 	//private url = 'http://localhost:80/siescolarappservicios/index.php/Tareas_controller/';
+	//private url = 'http://app.siescolar.xyz/index.php/tareas_controller/';
 
 
 	constructor(private http:Http) {
