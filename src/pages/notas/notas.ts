@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 //Servicios
-import {LoginService} from '../../services/login.service';
 import {AcudidosService} from '../../services/acudidos.service';
 
 //Modulos
@@ -23,7 +22,7 @@ export class NotasPage {
 	respuesta:any;
 	listaacudidos : any;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService, private storage:Storage, private acudidosservice: AcudidosService) {
+	constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage, private acudidosservice: AcudidosService) {
 		this.mostrar_acudidos();
 	}
 

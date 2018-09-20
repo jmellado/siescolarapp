@@ -1,0 +1,40 @@
+<!--
+  Generated template for the SeguimientosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Seguimientos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-list>
+    <ion-item ion-item *ngFor="let seguimiento of listaseguimientos">
+      <ion-avatar item-start>
+        <img src="assets/imgs/user.png">
+      </ion-avatar>
+      <h2>{{ seguimiento.nombresest }} {{ seguimiento.apellido1est }}</h2>
+      <p><b>Seguimiento:</b></p>
+      <p>{{ seguimiento.tipo_causal }}</p>
+      <p><b>Fecha Registro:</b></p>
+      <p>{{ seguimiento.fecha_registro }}</p>
+      <button ion-button clear item-end (click)="detalle_seguimiento(seguimiento)">Ver</button>
+    </ion-item>
+
+    <div *ngIf="listaseguimientos?.length == 0" class="listavacia">
+      <ion-icon item-start name="swap"></ion-icon>
+      <h1>No Hay Seguimientos</h1>
+    </div>
+  </ion-list>
+
+</ion-content>

@@ -16,6 +16,7 @@ import { DetalleeventoPage } from '../pages/detalleevento/detalleevento';
 import { NotasPage } from '../pages/notas/notas';
 import { AsignaturasPage } from '../pages/asignaturas/asignaturas';
 import { ActividadesPage } from '../pages/actividades/actividades';
+import { SeguimientosPage } from '../pages/seguimientos/seguimientos';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -24,6 +25,7 @@ import { TareasService } from '../services/tareas.service';
 import { EventosService } from '../services/eventos.service';
 import { AcudidosService } from '../services/acudidos.service';
 import { NotasService } from '../services/notas.service';
+import { SeguimientosService } from '../services/seguimientos.service';
 
 //Modulos
 import { HttpModule } from '@angular/http';
@@ -43,7 +45,8 @@ import { Push } from '@ionic-native/push';
     DetalleeventoPage,
     NotasPage,
     AsignaturasPage,
-    ActividadesPage
+    ActividadesPage,
+    SeguimientosPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { Push } from '@ionic-native/push';
     DetalleeventoPage,
     NotasPage,
     AsignaturasPage,
-    ActividadesPage
+    ActividadesPage,
+    SeguimientosPage
   ],
   providers: [
     StatusBar,
@@ -76,7 +80,8 @@ import { Push } from '@ionic-native/push';
     TareasService,
     EventosService,
     AcudidosService,
-    NotasService
+    NotasService,
+    SeguimientosService
   ]
 })
 export class AppModule {}
