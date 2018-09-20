@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { MensajesPage } from '../pages/mensajes/mensajes';
 import { TareasPage } from '../pages/tareas/tareas';
 import { EventosPage } from '../pages/eventos/eventos';
+import { NotasPage } from '../pages/notas/notas';
 
 //Servicios
 import {LoginService} from '../services/login.service';
@@ -44,7 +45,8 @@ export class MyApp {
       { title: 'Home', component: HomePage, icon: 'home' },
       { title: 'Mensajes', component: MensajesPage, icon: 'mail' },
       { title: 'Tareas', component: TareasPage, icon: 'clipboard' },
-      { title: 'Eventos', component: EventosPage, icon: 'calendar' }
+      { title: 'Eventos', component: EventosPage, icon: 'calendar' },
+      { title: 'Calificaciones', component: NotasPage, icon: 'podium' }
     ];
   }
 

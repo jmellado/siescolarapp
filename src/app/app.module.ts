@@ -13,6 +13,9 @@ import { TareasPage } from '../pages/tareas/tareas';
 import { DetalletareaPage } from '../pages/detalletarea/detalletarea';
 import { EventosPage } from '../pages/eventos/eventos';
 import { DetalleeventoPage } from '../pages/detalleevento/detalleevento';
+import { NotasPage } from '../pages/notas/notas';
+import { AsignaturasPage } from '../pages/asignaturas/asignaturas';
+import { ActividadesPage } from '../pages/actividades/actividades';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -20,6 +23,7 @@ import { MensajesService } from '../services/mensajes.service';
 import { TareasService } from '../services/tareas.service';
 import { EventosService } from '../services/eventos.service';
 import { AcudidosService } from '../services/acudidos.service';
+import { NotasService } from '../services/notas.service';
 
 //Modulos
 import { HttpModule } from '@angular/http';
@@ -36,7 +40,10 @@ import { Push } from '@ionic-native/push';
     TareasPage,
     DetalletareaPage,
     EventosPage,
-    DetalleeventoPage
+    DetalleeventoPage,
+    NotasPage,
+    AsignaturasPage,
+    ActividadesPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +61,10 @@ import { Push } from '@ionic-native/push';
     TareasPage,
     DetalletareaPage,
     EventosPage,
-    DetalleeventoPage
+    DetalleeventoPage,
+    NotasPage,
+    AsignaturasPage,
+    ActividadesPage
   ],
   providers: [
     StatusBar,
@@ -65,7 +75,8 @@ import { Push } from '@ionic-native/push';
     MensajesService,
     TareasService,
     EventosService,
-    AcudidosService
+    AcudidosService,
+    NotasService
   ]
 })
 export class AppModule {}
