@@ -7,6 +7,9 @@ import {SeguimientosService} from '../../services/seguimientos.service';
 //Modulos
 import { Storage } from '@ionic/storage';
 
+//Paginas
+import { DetalleseguimientoPage } from '../../pages/detalleseguimiento/detalleseguimiento';
+
 @IonicPage()
 @Component({
   selector: 'page-seguimientos',
@@ -57,8 +60,7 @@ export class SeguimientosPage {
 
 	detalle_seguimiento(seguimiento){
 
-		//this.navCtrl.push(DetallemensajePage, {id_notificacion:mensaje.id_notificacion});
-		alert('hola');
+		this.navCtrl.push(DetalleseguimientoPage, {id_seguimiento:seguimiento.id_seguimiento});
 
 	}
 

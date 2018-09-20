@@ -17,6 +17,7 @@ import { NotasPage } from '../pages/notas/notas';
 import { AsignaturasPage } from '../pages/asignaturas/asignaturas';
 import { ActividadesPage } from '../pages/actividades/actividades';
 import { SeguimientosPage } from '../pages/seguimientos/seguimientos';
+import { DetalleseguimientoPage } from '../pages/detalleseguimiento/detalleseguimiento';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -46,7 +47,8 @@ import { Push } from '@ionic-native/push';
     NotasPage,
     AsignaturasPage,
     ActividadesPage,
-    SeguimientosPage
+    SeguimientosPage,
+    DetalleseguimientoPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { Push } from '@ionic-native/push';
     NotasPage,
     AsignaturasPage,
     ActividadesPage,
-    SeguimientosPage
+    SeguimientosPage,
+    DetalleseguimientoPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,65 @@
+<!--
+  Generated template for the DetalleseguimientoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Seguimiento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<ion-card>
+		<ion-card-content>
+
+			<ion-card-title>
+	      		{{seguimiento?.nombresest}} {{seguimiento?.apellido1est}}
+	        </ion-card-title>
+
+
+			<p><b>Tipo Causal:</b></p>
+			<p>{{seguimiento?.tipo_causal}}</p>
+
+			<p><b>Causal:</b></p>
+			<p>{{seguimiento?.causal}}</p>
+
+			<p><b>Fecha Causal:</b> {{seguimiento?.fecha_causal}}</p>
+
+			<p><b>Situación:</b></p>
+			<p>{{seguimiento?.descripcion_situacion}}</p>
+
+
+			<p><b>Acción Pedagógica:</b></p>
+			<p>{{seguimiento?.accion_pedagogica}}</p>
+
+			<p><b>Descripción Acción Pedagógica:</b></p>
+			<p>{{seguimiento?.descripcion_accion_pedagogica}}</p>
+
+			<p><b>Compromiso Del Estudiante:</b></p>
+			<p>{{seguimiento?.compromiso_estudiante}}</p>
+
+			<p><b>Observaciones:</b></p>
+			<p>{{seguimiento?.observaciones}}</p>
+			
+
+			<ion-item>
+				<ion-avatar item-start>
+			      <img src="assets/imgs/user.png">
+			    </ion-avatar>
+			    
+			    <p><b>Realizado Por:</b></p>
+			    <p>{{seguimiento?.nombrespf}} {{seguimiento?.apellido1pf}}</p>
+			    <p><b>Asignatura</b></p>
+			    <p>{{seguimiento?.nombre_asignatura}}</p>
+			    <p>{{seguimiento?.fecha_registro}}</p>
+			</ion-item>
+		</ion-card-content>
+	</ion-card>
+
+</ion-content>
