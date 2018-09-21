@@ -25,8 +25,8 @@ import { Storage } from '@ionic/storage';
 })
 export class LoginPage {
 
-	username: string;
-	password: string;
+	username: string = '';
+	password: string = '';
 	isLogged: boolean;
 	session : any;
 	logueado: boolean;
@@ -44,30 +44,37 @@ export class LoginPage {
 
 		let formlogin = {username:this.username, password:this.password};
 		//console.log(this.username);
-		this.loginservice.login(formlogin)
-			.subscribe(
 
-				rs => this.isLogged = rs,
-				er => console.log(er),
-				() => {
+		if (this.username !='' && this.password !='') {
+			
+			this.loginservice.login(formlogin)
+				.subscribe(
 
-					if (this.isLogged) {
-						
-						this.navCtrl.setRoot(HomePage)
-						.then(
+					rs => this.isLogged = rs,
+					er => console.log(er),
+					() => {
 
-							data => console.log(data),
-							error => console.log(error)
+						if (this.isLogged) {
+							
+							this.navCtrl.setRoot(HomePage)
+							.then(
 
-						);
+								data => console.log(data),
+								error => console.log(error)
+
+							);
+						}
+						else{
+							//console.log('Usuario o Contraseña Incorrectos');
+							this.showAlert('Error al ingresar','Usuario o Contraseña Incorrectos.');
+						}
 					}
-					else{
-						//console.log('Usuario o Contraseña Incorrectos');
-						this.showAlert('Usuario o Contraseña Incorrectos.');
-					}
-				}
 
-			) 
+				)
+		}
+		else{
+			this.showAlert('Error','Ingresar Usuario y Contraseña.');
+		}		 
 
 	}
 
@@ -79,13 +86,13 @@ export class LoginPage {
 	}
 
 
-	showAlert(mensaje){
+	showAlert(titulo,mensaje){
 
 		let alert = this.alertCtrl.create({
 
-			title: 'Información',
+			title: titulo,
       		subTitle: mensaje,
-      		buttons: ['OK']
+      		buttons: ['ACEPTAR']
 
 		});
 
