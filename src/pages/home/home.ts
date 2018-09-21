@@ -11,6 +11,7 @@ import { LoginPage } from '../../pages/login/login';
 //Modulos
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 import { Storage } from '@ionic/storage';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -23,7 +24,7 @@ export class HomePage {
 	respuesta:any;
 	listaacudidos : any;
 
-	constructor(public navCtrl: NavController,private push: Push, private loginservice: LoginService, private storage:Storage, private acudidosservice: AcudidosService) {
+	constructor(public navCtrl: NavController,private push: Push, private loginservice: LoginService, private storage:Storage, private acudidosservice: AcudidosService, public alertCtrl: AlertController) {
 
 		// to check if we have permission
 		this.push.hasPermission()
@@ -52,7 +53,8 @@ export class HomePage {
 
 				pushObject.on('notification').subscribe((notification: any) => {
 					//console.log('Received a notification', notification)
-					alert(notification.message);
+					//alert(notification.message);
+					this.showAlert(notification.title,notification.message);
 				});
 
 				pushObject.on('registration').subscribe((registration: any) => {
@@ -146,6 +148,20 @@ export class HomePage {
 	    });
 
 	  	
+	}
+
+
+	showAlert(titulo,mensaje){
+
+		let alert = this.alertCtrl.create({
+
+			title: titulo,
+      		subTitle: mensaje,
+      		buttons: ['OK']
+
+		});
+
+		alert.present();
 	}
 
 }
