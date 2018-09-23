@@ -10,6 +10,7 @@ import {HomePage} from '../home/home';
 //Modulos
 import { AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { Network } from '@ionic-native/network';
 
 /**
  * Generated class for the LoginPage page.
@@ -31,7 +32,7 @@ export class LoginPage {
 	session : any;
 	logueado: boolean;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService, public alertCtrl: AlertController, private storage: Storage, private menuCtrl: MenuController) {
+	constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService, public alertCtrl: AlertController, private storage: Storage,private network: Network, private menuCtrl: MenuController) {
 		//this.verificarlogin();
 	}
 
@@ -46,31 +47,38 @@ export class LoginPage {
 		//console.log(this.username);
 
 		if (this.username !='' && this.password !='') {
+
+			if (this.network.type != 'none') {
 			
-			this.loginservice.login(formlogin)
-				.subscribe(
+				this.loginservice.login(formlogin)
+					.subscribe(
 
-					rs => this.isLogged = rs,
-					er => console.log(er),
-					() => {
+						rs => this.isLogged = rs,
+						er => console.log(er),
+						() => {
 
-						if (this.isLogged) {
-							
-							this.navCtrl.setRoot(HomePage)
-							.then(
+							if (this.isLogged) {
+								
+								this.navCtrl.setRoot(HomePage)
+								.then(
 
-								data => console.log(data),
-								error => console.log(error)
+									data => console.log(data),
+									error => console.log(error)
 
-							);
+								);
+							}
+							else{
+								//console.log('Usuario o Contraseña Incorrectos');
+								this.showAlert('Error al ingresar','Usuario o Contraseña Incorrectos.');
+							}
 						}
-						else{
-							//console.log('Usuario o Contraseña Incorrectos');
-							this.showAlert('Error al ingresar','Usuario o Contraseña Incorrectos.');
-						}
-					}
 
-				)
+					)
+					
+			}
+			else{
+				this.showAlert('Error al ingresar','No se puede iniciar sesión. No hay conexión a una red en este momento.');
+			}		
 		}
 		else{
 			this.showAlert('Error','Ingresar Usuario y Contraseña.');

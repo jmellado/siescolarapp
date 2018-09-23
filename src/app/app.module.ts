@@ -32,6 +32,7 @@ import { SeguimientosService } from '../services/seguimientos.service';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { Push } from '@ionic-native/push';
+import { Network } from '@ionic-native/network';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { Push } from '@ionic-native/push';
     StatusBar,
     SplashScreen,
     Push,
+    Network,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginService,
     MensajesService,

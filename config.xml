@@ -89,4 +89,5 @@
         <variable name="SENDER_ID" value="572585353227" />
     </plugin>
     <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
 </widget>
