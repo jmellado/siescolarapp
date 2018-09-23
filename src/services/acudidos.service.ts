@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Storage } from '@ionic/storage';
 import { Observable } from 'rxjs/Observable';
 
 //importamos los orepaddores de reacti necesarios para realizar la peticiones con el protocolo HTTP
@@ -21,7 +20,7 @@ export class AcudidosService {
 	//private url = 'http://app.siescolar.xyz/index.php/login_controller/';
 
 	
-	constructor(private http:Http, private storage:Storage) {
+	constructor(private http:Http) {
 
 		let headers = new Headers({'Content-Type':'application/json'});
 		this.options = new RequestOptions({headers: headers})
