@@ -23,9 +23,10 @@
 			<ion-avatar item-start>
 				<img src="assets/imgs/user.png">
 			</ion-avatar>
-			<h2>{{ tarea.nombres }} {{ tarea.apellido1 }}</h2>
+			<h2>{{ tarea.nombresest }} {{ tarea.apellido1est }}</h2>
 			<p>{{ tarea.titulo }}</p>
-			<button ion-button clear item-end (click)="detalle_tarea(tarea)">View</button>
+			<p>{{ tarea.fecha_envio }}</p>
+			<button ion-button clear item-end (click)="detalle_tarea(tarea)">Ver</button>
 	    </ion-item>
 
 	    <div *ngIf="listatareas?.length == 0" class="listavacia">

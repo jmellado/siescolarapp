@@ -23,9 +23,10 @@
       <ion-avatar item-start>
         <img src="assets/imgs/user.png">
       </ion-avatar>
-      <h2>{{ mensaje.nombres }} {{ mensaje.apellido1 }}</h2>
+      <h2>{{ mensaje.nombresest }} {{ mensaje.apellido1est }}</h2>
       <p>{{ mensaje.titulo }}</p>
-      <button ion-button clear item-end (click)="detalle_mensaje(mensaje)">View</button>
+      <p>{{ mensaje.fecha_envio }}</p>
+      <button ion-button clear item-end (click)="detalle_mensaje(mensaje)">Ver</button>
     </ion-item>
 
     <div *ngIf="listamensajes?.length == 0" class="listavacia">

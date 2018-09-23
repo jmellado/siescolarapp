@@ -14,7 +14,7 @@ export class MensajesService {
 
 	private options;
 
-	private url = 'http://192.168.0.3:80/siescolarappservicios/index.php/Mensajes_controller/';
+	private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Mensajes_controller/';
 	//private url = 'http://localhost:80/siescolarappservicios/index.php/Mensajes_controller/';
 	//private url = 'http://app.siescolar.xyz/index.php/mensajes_controller/';
 
@@ -32,7 +32,7 @@ export class MensajesService {
 		let url = `${this.url}`;
 		let iJson = JSON.stringify(persona);
 		return this.http.post(url+'index',iJson, this.options)
-				   .map(r => r.json()) 
+				   .map(r => r.json())  
 		
 	}
 
