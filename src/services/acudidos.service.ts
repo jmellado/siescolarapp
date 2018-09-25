@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 
 
@@ -33,8 +34,16 @@ export class AcudidosService {
 		let url = `${this.url}`;
 		let iJson = JSON.stringify(persona);
 		return this.http.post(url+'index',iJson, this.options)
-				   .map(r => r.json()) 
+				   .map(r => r.json())
+				   .catch(this.catchError) 
 		
+	}
+
+
+	private catchError(error: Response | any){
+
+		//console.log(error);
+		return Observable.throw(error.json().error || "ServerError");
 	}
 
 

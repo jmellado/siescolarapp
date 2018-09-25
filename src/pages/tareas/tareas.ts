@@ -27,6 +27,7 @@ export class TareasPage {
 	listatareas : any;
 	session: any;
 	id_persona: string;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private tareasservice: TareasService, private storage:Storage) {
 
@@ -52,7 +53,8 @@ export class TareasPage {
 		        this.tareasservice.getTareas(persona)
 			  		.subscribe(
 			  			rs => this.listatareas = rs,
-			  			er => console.log(er),
+			  			//er => console.log(er),
+			  			er => this.errormensaje = er,
 			  			() => console.log(this.listatareas)
 			  		)
 		        

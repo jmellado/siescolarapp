@@ -15,6 +15,7 @@ import { ActividadesPage } from '../../pages/actividades/actividades';
 export class AsignaturasPage {
 
 	listaasignaturas : any;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private notasservice: NotasService) {
 
@@ -34,7 +35,8 @@ export class AsignaturasPage {
 	  	this.notasservice.getAsignaturas(idEstudiante)
 	  		.subscribe(
 	  			rs => this.listaasignaturas = rs,
-	  			er => console.log(er),
+	  			//er => console.log(er),
+	  			er => this.errormensaje = er,
 	  			() => console.log(this.listaasignaturas)
 
 	  		)

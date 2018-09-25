@@ -21,6 +21,7 @@ export class NotasPage {
 	id_persona: string;
 	respuesta:any;
 	listaacudidos : any;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage, private acudidosservice: AcudidosService) {
 		this.mostrar_acudidos();
@@ -44,7 +45,8 @@ export class NotasPage {
 		        this.acudidosservice.getAcudidos(persona)
 			  		.subscribe(
 			  			rs => this.listaacudidos = rs,
-			  			er => console.log(er),
+			  			//er => console.log(er),
+			  			er => this.errormensaje = er,
 			  			() => console.log(this.listaacudidos)
 			  		)
 		        

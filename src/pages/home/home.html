@@ -52,6 +52,10 @@
           <ion-icon item-start name="information-circle"></ion-icon>
           <h2>No Tiene Acudidos</h2>
         </div>
+
+        <div *ngIf="errormensaje == 'ServerError'" class="error">
+          <p><b>No hay Información Disponible</b></p>
+        </div>
       </ion-list>
 
     </ion-card-content>

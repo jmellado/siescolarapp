@@ -27,6 +27,7 @@ export class EventosPage {
 	listaeventos : any;
 	session: any;
 	id_persona: string;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private eventosservice: EventosService, private storage:Storage) {
 
@@ -52,7 +53,8 @@ export class EventosPage {
 		        this.eventosservice.getEventos(persona)
 			  		.subscribe(
 			  			rs => this.listaeventos = rs,
-			  			er => console.log(er),
+			  			//er => console.log(er),
+			  			er => this.errormensaje = er,
 			  			() => console.log(this.listaeventos)
 			  		)
 		        

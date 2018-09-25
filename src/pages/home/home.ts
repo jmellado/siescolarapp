@@ -23,6 +23,7 @@ export class HomePage {
 	id_persona: string;
 	respuesta:any;
 	listaacudidos : any;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController,private push: Push, private loginservice: LoginService, private storage:Storage, private acudidosservice: AcudidosService, public alertCtrl: AlertController) {
 
@@ -138,7 +139,8 @@ export class HomePage {
 		        this.acudidosservice.getAcudidos(persona)
 			  		.subscribe(
 			  			rs => this.listaacudidos = rs,
-			  			er => console.log(er),
+			  			//er => console.log(er),
+			  			er => this.errormensaje = er,
 			  			() => console.log(this.listaacudidos)
 			  		)
 		        

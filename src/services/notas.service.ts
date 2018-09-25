@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 
 
@@ -33,7 +34,8 @@ export class NotasService {
 		let url = `${this.url}`;
 		let iJson = JSON.stringify(idEstudiante);
 		return this.http.post(url+'asignaturas',iJson, this.options)
-				   .map(r => r.json()) 
+				   .map(r => r.json())
+				   .catch(this.catchError) 
 		
 	}
 
@@ -43,8 +45,16 @@ export class NotasService {
 		let url = `${this.url}`;
 		let iJson = JSON.stringify(idAsigEst);
 		return this.http.post(url+'actividades',iJson, this.options)
-				   .map(r => r.json()) 
+				   .map(r => r.json())
+				   .catch(this.catchError) 
 		
+	}
+
+
+	private catchError(error: Response | any){
+
+		//console.log(error);
+		return Observable.throw(error.json().error || "ServerError");
 	}
 
 

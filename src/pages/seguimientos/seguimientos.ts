@@ -20,6 +20,7 @@ export class SeguimientosPage {
 	listaseguimientos : any;
 	session: any;
 	id_persona: string;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private seguimientosservice: SeguimientosService, private storage:Storage) {
 
@@ -45,7 +46,8 @@ export class SeguimientosPage {
 		        this.seguimientosservice.getSeguimientos(persona)
 			  		.subscribe(
 			  			rs => this.listaseguimientos = rs,
-			  			er => console.log(er),
+			  			//er => console.log(er),
+			  			er => this.errormensaje = er,
 			  			() => console.log(this.listaseguimientos)
 			  		)
 		        

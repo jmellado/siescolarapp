@@ -33,6 +33,10 @@
 	    	<ion-icon item-start name="clipboard"></ion-icon>
 	    	<h1>No Hay Tareas</h1>
 	    </div>
+
+	    <div *ngIf="errormensaje == 'ServerError'" class="error">
+	      <p><b>No hay Información Disponible</b></p>
+	    </div>
 	</ion-list>
 
 </ion-content>

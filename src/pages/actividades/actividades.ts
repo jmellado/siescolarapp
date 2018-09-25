@@ -12,6 +12,7 @@ import {NotasService} from '../../services/notas.service';
 export class ActividadesPage {
 
 	listaactividades : any;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private notasservice: NotasService) {
 
@@ -33,7 +34,8 @@ export class ActividadesPage {
 	  	this.notasservice.getActividades(idAsigEst)
 	  		.subscribe(
 	  			rs => this.listaactividades = rs,
-	  			er => console.log(er),
+	  			//er => console.log(er),
+	  			er => this.errormensaje = er,
 	  			() => console.log(this.listaactividades)
 
 	  		)

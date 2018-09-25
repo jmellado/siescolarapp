@@ -41,6 +41,9 @@
       <h1>No Hay Actividades</h1>
     </div>
 
+    <div *ngIf="errormensaje == 'ServerError'" class="error">
+      <p><b>No hay Información Disponible</b></p>
+    </div>
   </ion-list>
 
 </ion-content>
