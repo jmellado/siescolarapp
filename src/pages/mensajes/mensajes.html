@@ -33,6 +33,11 @@
       <ion-icon item-start name="mail-open"></ion-icon>
       <h1>No Hay Mensajes</h1>
     </div>
+
+    <div *ngIf="errormensaje == 'ServerError'" class="error">
+      <p><b>No hay Información Disponible</b></p>
+    </div>
+
   </ion-list>
 
 </ion-content>

@@ -27,6 +27,7 @@ export class MensajesPage {
 	listamensajes : any;
 	session: any;
 	id_persona: string;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private mensajesservice: MensajesService, private storage:Storage) {
 
@@ -52,7 +53,8 @@ export class MensajesPage {
 		        this.mensajesservice.getMensajes(persona)
 			  		.subscribe(
 			  			rs => this.listamensajes = rs,
-			  			er => console.log(er),
+			  			//er => console.log(er),
+			  			er => this.errormensaje = er,
 			  			() => console.log(this.listamensajes)
 			  		)
 		        
