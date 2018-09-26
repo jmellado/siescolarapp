@@ -8,7 +8,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/catch';
-
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/timeout';
 
 
 @Injectable()
@@ -36,6 +37,7 @@ export class LoginService {
 		let url = `${this.url}`;
 		let iJson = JSON.stringify(userInfo);
 		return this.http.post(url+'login_user',iJson, this.options)
+		                .timeout(5000)
 						.map(response => response.text())
 						.map(response => {
 
@@ -52,7 +54,8 @@ export class LoginService {
 
 							return this.loggedIn;
 
-						});
+						})
+						.catch(this.catchError)
 
 	}
 
@@ -77,6 +80,13 @@ export class LoginService {
 		return this.http.post(url+'registrar_token',iJson, this.options)
 				   .map(r => r.text()) 
 		
+	}
+
+
+	private catchError(error: Response | any){
+
+		//console.log(error);
+		return Observable.throw(error.json().error || "ServerError");
 	}
 
 

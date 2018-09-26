@@ -31,6 +31,7 @@ export class LoginPage {
 	isLogged: boolean;
 	session : any;
 	logueado: boolean;
+	errormensaje: string;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService, public alertCtrl: AlertController, private storage: Storage,private network: Network, private menuCtrl: MenuController) {
 		//this.verificarlogin();
@@ -54,7 +55,8 @@ export class LoginPage {
 					.subscribe(
 
 						rs => this.isLogged = rs,
-						er => console.log(er),
+						//er => console.log(er),
+						er => this.showError(er),
 						() => {
 
 							if (this.isLogged) {
@@ -124,6 +126,20 @@ export class LoginPage {
 		    }
 	        
 	    });
+	}
+
+
+	showError(error){
+
+		let alert = this.alertCtrl.create({
+
+			title: 'Error al ingresar',
+      		subTitle: 'No se puede establecer una conexión con el servidor',
+      		buttons: ['ACEPTAR']
+
+		});
+
+		alert.present();
 	}
 
 
