@@ -110,7 +110,7 @@ export class LoginPage {
 	}
 
 
-	verificarlogin(){
+	/*verificarlogin(){
 
 		this.storage.get('session').then((val) =>{
 
@@ -126,7 +126,7 @@ export class LoginPage {
 		    }
 	        
 	    });
-	}
+	}*/
 
 
 	showError(error){
