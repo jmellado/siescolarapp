@@ -17,9 +17,9 @@ export class LoginService {
 
 	private options;
 
-	private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Login_controller/';
+	//private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Login_controller/';
 	//private url = 'http://localhost:80/siescolarappservicios/index.php/Login_controller/';
-	//private url = 'http://app.siescolar.xyz/index.php/login_controller/';
+	private url = 'http://app.siescolar.xyz/index.php/login_controller/';
 
 	//userName: string;
 	loggedIn: boolean;

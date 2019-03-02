@@ -16,9 +16,9 @@ export class AcudidosService {
 
 	private options;
 
-	private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Acudidos_controller/';
+	//private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Acudidos_controller/';
 	//private url = 'http://localhost:80/siescolarappservicios/index.php/Login_controller/';
-	//private url = 'http://app.siescolar.xyz/index.php/login_controller/';
+	private url = 'http://app.siescolar.xyz/index.php/acudidos_controller/';
 
 	
 	constructor(private http:Http) {

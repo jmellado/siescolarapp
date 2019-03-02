@@ -16,9 +16,9 @@ export class MensajesService {
 
 	private options;
 
-	private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Mensajes_controller/';
+	//private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Mensajes_controller/';
 	//private url = 'http://localhost:80/siescolarappservicios/index.php/Mensajes_controller/';
-	//private url = 'http://app.siescolar.xyz/index.php/mensajes_controller/';
+	private url = 'http://app.siescolar.xyz/index.php/mensajes_controller/';
 
 
 	constructor(private http:Http) {
