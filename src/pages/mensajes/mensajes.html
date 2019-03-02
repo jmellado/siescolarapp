@@ -21,7 +21,7 @@
   <ion-list>
     <ion-item ion-item *ngFor="let mensaje of listamensajes">
       <ion-avatar item-start>
-        <img src="assets/imgs/user.png">
+        <img src="http://www.siescolar.xyz/siescolar/uploads/imagenes/fotos/{{mensaje.id_estudiante}}.jpg">
       </ion-avatar>
       <h2>{{ mensaje.nombresest }} {{ mensaje.apellido1est }}</h2>
       <p>{{ mensaje.titulo }}</p>
