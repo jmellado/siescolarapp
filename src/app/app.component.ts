@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -33,12 +33,13 @@ export class MyApp {
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private loginservice: LoginService, private storage: Storage) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private loginservice: LoginService, private storage: Storage, private events: Events) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       this.verificarlogin();
+      this.actualizar_usuario();
       splashScreen.hide();
     });
 
@@ -102,6 +103,21 @@ export class MyApp {
               () => console.log(this.respuesta)
             )
       }
+
+    });
+
+  }
+
+
+  //Esta funcion permite actualizar la informacion del usuario que se muestra en el menu lateral,
+  //suscribiendose a un evento, que fue publicado al iniciar sesion y almacena la informacion del
+  //usuario actual.
+  actualizar_usuario(){
+
+    this.events.subscribe('usuario', (response) => {
+      
+      this.session = JSON.parse(response);
+      console.log('Usuario Actualizado En El Menu Lateral');
 
     });
 

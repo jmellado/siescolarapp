@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Events } from 'ionic-angular';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Storage } from '@ionic/storage';
@@ -24,7 +25,7 @@ export class LoginService {
 	//userName: string;
 	loggedIn: boolean;
 
-	constructor(private http:Http, private storage:Storage) {
+	constructor(private http:Http, private storage:Storage, private events: Events) {
 
 		let headers = new Headers({'Content-Type':'application/json'});
 		this.options = new RequestOptions({headers: headers})
@@ -49,6 +50,7 @@ export class LoginService {
 								
 								this.storage.set('session', response);
 								//this.userName = userInfo.username;
+								this.events.publish('usuario', response);
 								this.loggedIn = true;
 							}
 
