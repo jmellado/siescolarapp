@@ -36,7 +36,7 @@ export class AsignaturasPage {
 	  		.subscribe(
 	  			rs => this.listaasignaturas = rs,
 	  			//er => console.log(er),
-	  			er => this.errormensaje = er,
+	  			er => this.errormensaje = 'ServerError',
 	  			() => console.log(this.listaasignaturas)
 
 	  		)

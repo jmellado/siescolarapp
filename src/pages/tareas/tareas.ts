@@ -54,7 +54,7 @@ export class TareasPage {
 			  		.subscribe(
 			  			rs => this.listatareas = rs,
 			  			//er => console.log(er),
-			  			er => this.errormensaje = er,
+			  			er => this.errormensaje = 'ServerError',
 			  			() => console.log(this.listatareas)
 			  		)
 		        

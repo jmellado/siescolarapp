@@ -54,7 +54,7 @@ export class EventosPage {
 			  		.subscribe(
 			  			rs => this.listaeventos = rs,
 			  			//er => console.log(er),
-			  			er => this.errormensaje = er,
+			  			er => this.errormensaje = 'ServerError',
 			  			() => console.log(this.listaeventos)
 			  		)
 		        

@@ -54,7 +54,7 @@ export class MensajesPage {
 			  		.subscribe(
 			  			rs => this.listamensajes = rs,
 			  			//er => console.log(er),
-			  			er => this.errormensaje = er,
+			  			er => this.errormensaje = 'ServerError',
 			  			() => console.log(this.listamensajes)
 			  		)
 		        

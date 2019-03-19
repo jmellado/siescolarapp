@@ -47,7 +47,7 @@ export class SeguimientosPage {
 			  		.subscribe(
 			  			rs => this.listaseguimientos = rs,
 			  			//er => console.log(er),
-			  			er => this.errormensaje = er,
+			  			er => this.errormensaje = 'ServerError',
 			  			() => console.log(this.listaseguimientos)
 			  		)
 		        

@@ -35,7 +35,7 @@ export class ActividadesPage {
 	  		.subscribe(
 	  			rs => this.listaactividades = rs,
 	  			//er => console.log(er),
-	  			er => this.errormensaje = er,
+	  			er => this.errormensaje = 'ServerError',
 	  			() => console.log(this.listaactividades)
 
 	  		)

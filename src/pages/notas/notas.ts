@@ -46,7 +46,7 @@ export class NotasPage {
 			  		.subscribe(
 			  			rs => this.listaacudidos = rs,
 			  			//er => console.log(er),
-			  			er => this.errormensaje = er,
+			  			er => this.errormensaje = 'ServerError',
 			  			() => console.log(this.listaacudidos)
 			  		)
 		        
