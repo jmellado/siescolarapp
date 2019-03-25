@@ -17,7 +17,7 @@ export class EventosService {
 
 	//private url = 'http://192.168.0.4:80/siescolarappservicios/index.php/Eventos_controller/';
 	//private url = 'http://localhost:80/siescolarappservicios/index.php/Eventos_controller/';
-	private url = 'http://app.siescolar.xyz/index.php/eventos_controller/';
+	private url = 'http://app.siescolar.online/index.php/eventos_controller/';
 
 
 	constructor(private http:Http) {

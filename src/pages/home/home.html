@@ -21,7 +21,7 @@
       <ion-item>
         <ion-avatar item-start>
           <!--<img src="assets/imgs/user.png">-->
-          <img src="http://www.siescolar.xyz/siescolar/uploads/imagenes/fotos/{{session?.id_persona}}.jpg">
+          <img src="http://www.siescolar.online/siescolar/uploads/imagenes/fotos/{{session?.id_persona}}.jpg">
         </ion-avatar>
           
         <h2>{{session?.nombres}}</h2>
@@ -43,7 +43,7 @@
       <ion-list>
         <ion-item ion-item *ngFor="let acudido of listaacudidos">
           <ion-avatar item-start>
-            <img src="http://www.siescolar.xyz/siescolar/uploads/imagenes/fotos/{{acudido.id_estudiante}}.jpg">
+            <img src="http://www.siescolar.online/siescolar/uploads/imagenes/fotos/{{acudido.id_estudiante}}.jpg">
           </ion-avatar>
           <h2>{{ acudido.nombres }} {{ acudido.apellido1 }}</h2>
           <p>Curso: {{ acudido.nombre_grado }} {{ acudido.nombre_grupo }} {{ acudido.jornada }}</p>
