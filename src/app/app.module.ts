@@ -18,6 +18,9 @@ import { AsignaturasPage } from '../pages/asignaturas/asignaturas';
 import { ActividadesPage } from '../pages/actividades/actividades';
 import { SeguimientosPage } from '../pages/seguimientos/seguimientos';
 import { DetalleseguimientoPage } from '../pages/detalleseguimiento/detalleseguimiento';
+import { AsistenciasPage } from '../pages/asistencias/asistencias';
+import { AsignaturasAsistenciasPage } from '../pages/asignaturas-asistencias/asignaturas-asistencias';
+import { ListaAsistenciasPage } from '../pages/lista-asistencias/lista-asistencias';
 
 //Servicios
 import { LoginService } from '../services/login.service';
@@ -27,6 +30,7 @@ import { EventosService } from '../services/eventos.service';
 import { AcudidosService } from '../services/acudidos.service';
 import { NotasService } from '../services/notas.service';
 import { SeguimientosService } from '../services/seguimientos.service';
+import { AsistenciasService } from '../services/asistencias.service';
 
 //Modulos
 import { HttpModule } from '@angular/http';
@@ -49,7 +53,10 @@ import { Network } from '@ionic-native/network';
     AsignaturasPage,
     ActividadesPage,
     SeguimientosPage,
-    DetalleseguimientoPage
+    DetalleseguimientoPage,
+    AsistenciasPage,
+    AsignaturasAsistenciasPage,
+    ListaAsistenciasPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +79,10 @@ import { Network } from '@ionic-native/network';
     AsignaturasPage,
     ActividadesPage,
     SeguimientosPage,
-    DetalleseguimientoPage
+    DetalleseguimientoPage,
+    AsistenciasPage,
+    AsignaturasAsistenciasPage,
+    ListaAsistenciasPage
   ],
   providers: [
     StatusBar,
@@ -86,7 +96,8 @@ import { Network } from '@ionic-native/network';
     EventosService,
     AcudidosService,
     NotasService,
-    SeguimientosService
+    SeguimientosService,
+    AsistenciasService
   ]
 })
 export class AppModule {}

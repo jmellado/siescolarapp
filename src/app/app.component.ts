@@ -10,6 +10,7 @@ import { TareasPage } from '../pages/tareas/tareas';
 import { EventosPage } from '../pages/eventos/eventos';
 import { NotasPage } from '../pages/notas/notas';
 import { SeguimientosPage } from '../pages/seguimientos/seguimientos';
+import { AsistenciasPage } from '../pages/asistencias/asistencias';
 
 //Servicios
 import {LoginService} from '../services/login.service';
@@ -49,6 +50,7 @@ export class MyApp {
       { title: 'Tareas', component: TareasPage, icon: 'clipboard' },
       { title: 'Eventos', component: EventosPage, icon: 'calendar' },
       { title: 'Calificaciones', component: NotasPage, icon: 'podium' },
+      { title: 'Asistencias', component: AsistenciasPage, icon: 'checkbox-outline' },
       { title: 'Seguimientos', component: SeguimientosPage, icon: 'swap' }
     ];
   }
