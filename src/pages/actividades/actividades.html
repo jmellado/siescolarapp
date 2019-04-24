@@ -19,22 +19,20 @@
 <ion-content>
 
 	<ion-list>
-    
-    <ion-item ion-item *ngFor="let actividad of listaactividades">
-    	<ion-card>
-    		<ion-card-content>
-    			<ion-card-title>
-    				Actividad
-	      	</ion-card-title>
+  	<ion-card *ngFor="let actividad of listaactividades">
+  		<ion-card-content>
+  			<ion-card-title>
+  				Actividad
+      	</ion-card-title>
 
-	      	<p class="descripcion">{{ actividad.descripcion_actividad }}</p>
-	      	
-	      	<p><b>Periodo:</b> {{ actividad.periodo }}</p>
-	      	<h2>Calificación: {{ actividad.nota }}</h2>
-	      	<p><b>Fecha Registro:</b> {{ actividad.fecha_registro }}</p>
-    		</ion-card-content>
-    	</ion-card>
-    </ion-item>
+      	<p class="descripcion">{{ actividad.descripcion_actividad }}</p>
+      	
+      	<p><b>Periodo:</b> {{ actividad.periodo }}</p>
+        <p><b>Asignatura:</b> {{ actividad.nombre_asignatura }}</p>
+        <p class="nota"><b>Calificación:</b> {{ actividad.nota }}</p>
+      	<p><b>Fecha Registro:</b> {{ actividad.fecha_registro }}</p>
+  		</ion-card-content>
+  	</ion-card>
 
     <div *ngIf="listaactividades?.length == 0" class="listavacia">
       <ion-icon item-start name="information-circle"></ion-icon>
